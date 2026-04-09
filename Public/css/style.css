@@ -1,0 +1,502 @@
+/* RESET & MOBILE OPTIMIZATION */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    color: #1e293b;
+}
+
+.screen {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.screen.active { display: flex; flex-direction: column; }
+
+/* --- PROFESSIONAL WHITE SPLASH --- */
+#splash-screen {
+    background-color: #ffffff; /* Ekdum white background jaisa manga tha */
+    justify-content: center;
+    align-items: center;
+}
+
+.app-icon-container {
+    width: 240px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Soft shadow for premium look */
+   
+}
+
+#app-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.splash-bottom {
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.version {
+    font-size: 11px;
+    color: #cbd5e1;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.powered-text {
+    font-size: 10px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.powered-text span {
+    color: #1e293b;
+    font-weight: 800;
+}
+
+
+
+
+
+/* --- header section css --- */
+.app-header-premium {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Height kam kar di */
+    z-index: 1000;
+    
+    /* Animated Texture: White to Very Light Blue Gradient */
+    background: linear-gradient(-45deg, #ffffff, #f0f9ff, #e0f2fe, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite; /* Texture change hota rahega */
+    
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.05); /* Bahut halki line */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Texture Change Animation Logic */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header-inner {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo-img {
+    height: 40px; /* Sleek Size */
+    width: auto;
+}
+
+/* LOGIN NOW: Premium & Minimalist */
+.login-link {
+    background: transparent;
+    color: #0369a1; /* Thoda dark blue for readability */
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Login ke niche ek halki line premium feel ke liye */
+.login-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #0ea5e9;
+    border-radius: 10px;
+    opacity: 0.3;
+}
+
+.login-link:active {
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+
+
+
+
+
+/* --- MODERN OVERLAY HERO SECTION --- */
+.hero-section {
+    width: 100%;
+    margin-top: 39px;
+    padding: 30px 15px 35px 15px; /* Bottom padding 60 se kam karke 35 kar di */
+    margin-bottom: 0;
+    
+    /* VERY LIGHT FADED BLUE: Wahi texture jo header me hai */
+    background: linear-gradient(-45deg, #ffffff, #f0f9ff, #e0f2fe, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite; /* Header wali moving texture */
+    
+    position: relative;
+    padding: 30px 15px 60px 15px;
+    overflow: hidden;
+    
+    /* PREMIUM BOTTOM ARC EFFECT */
+    border-bottom-left-radius: 50% 30px;
+    border-bottom-right-radius: 50% 30px;
+    
+    /* Halki si blue shadow taaki arc depth dikhe */
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.04);
+}
+
+.hero-container {
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 220px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5; /* Text image ke upar rahega */
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #166534; /* Deep Greenish for Pregnancy Theme */
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.hero-subtitle {
+    font-size: 13px;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* HORIZONTAL BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap; /* Taki line me rahein */
+}
+
+.btn-primary {
+    background: #4d7c0f; /* Dark Green like your screenshot */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.btn-secondary {
+    background: white;
+    color: #166534;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.fa-whatsapp { color: #25D366; font-size: 16px; }
+
+/* IMAGE ALIGNMENT: Right Side Chipki Hui */
+.hero-image-wrapper {
+    position: absolute;
+    right: -20px; /* Screen ke kone se chipka diya */
+    top: -30px;
+    bottom: -60px;
+    width: 50%; /* Screen ka aadha hissa cover karegi */
+    z-index: 1;
+}
+
+.hero-overlay-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Photo kategi nahi, fill karegi */
+    object-position: left center; /* Lady ka face focus me rahega */
+    opacity: 0.9;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 400px) {
+    .hero-title { font-size: 19px; }
+    .hero-subtitle { font-size: 12px; }
+    .hero-buttons { gap: 5px; }
+    .btn-primary, .btn-secondary { 
+        padding: 8px 10px; 
+        font-size: 10px; 
+    }
+}
+
+
+
+/* --- TRUST INDICATORS (POP-OUT STYLE) --- */
+.trust-section {
+    margin-top: -10px;
+   padding: 18px 15px 20px 15px; /* Top padding badha di taaki images ke liye jagah rahe */
+    background-color: #ffffff;
+}
+
+.trust-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 35px; /* Heading aur card ke beech gap image ke liye */
+}
+
+.trust-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* --- PREMIUM DEEP-SHADOW BLUE TRUST CARD --- */
+.trust-card {
+    flex: 1;
+    /* Animated Faded Blue to White Gradient (Header Theme) */
+    background: linear-gradient(-45deg, #f0f9ff, #ffffff, #e0f2fe, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; /* Dhire-dhire change hoga */
+    
+    border-radius: 18px; /* Thode zyada rounded, modern premium look */
+    padding: 35px 5px 12px 5px; /* Top and Bottom padding increased */
+    text-align: center;
+    position: relative; 
+    
+    /* Bahut halki border taki texture smooth lage */
+    border: 1px solid rgba(14, 165, 233, 0.03); 
+    
+    /* DEEP, SOFT SHADOW: Card ko screen par hawa mein lift karne ke liye */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), /* Deep spread */
+                0 4px 10px rgba(14, 165, 233, 0.03); /* Subtle blue glow */
+    
+    transition: transform 0.3s ease; /* Hover effect ke liye agar chaho */
+    overflow: visible; /* Pop-out images are safe */
+}
+
+/* Texture Change Animation (Same as header) */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Font color optimizations for the new blue background */
+.trust-info .count {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #0c4a6e; /* Darkest Blue for high readability */
+    margin-top: 10px;
+}
+
+.trust-info p {
+    font-size: 9px;
+    color: #334155; /* Slate Gray */
+    line-height: 1.2;
+    font-weight: 700;
+}
+/* Container for the Pop-out Image */
+.pop-img-container {
+    position: absolute;
+    top: -25px; /* Card ke bahar nikalne ke liye negative value */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.pop-img {
+    width: 100%; /* Image thodi badi dikhegi */
+    height: auto;
+    max-height: 60px; /* Adjust as per your image */
+    object-fit: contain;
+    /* Isse image transparent background wali badhiya lagegi */
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1)); 
+}
+
+.trust-info .count {
+    display: block;
+    font-size: 11px; /* Font thoda optimize kiya */
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 5px;
+}
+
+.trust-info p {
+    font-size: 9px;
+    color: #64748b;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* Mobile responsive tweak */
+@media (max-width: 380px) {
+    .trust-cards-container { gap: 5px; }
+    .pop-img-container { width: 40px; top: -20px; }
+    .trust-card { padding-top: 25px; }
+    .trust-info .count { font-size: 10px; }
+}
+
+
+
+
+.app-body { padding: 10px 15px; background: #f8fafc; }
+
+.premium-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-title { font-size: 14px; font-weight: 700; color: #334155; }
+
+.track-btn {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* Timeline Logic */
+.timeline-wrapper { position: relative; padding: 10px 0; }
+
+.dotted-line {
+    position: absolute;
+    top: 32px;
+    left: 20px;
+    right: 20px;
+    border-top: 1.5px dotted #cbd5e1;
+    z-index: 1;
+}
+
+.timeline-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    position: relative;
+    z-index: 2;
+    scrollbar-width: none;
+}
+.timeline-scroll::-webkit-scrollbar { display: none; }
+
+.time-item { min-width: 65px; text-align: center; }
+
+.baby-circle {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: 1px solid #0ea5e9;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-item.active .baby-circle {
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+    border-width: 2px;
+}
+
+.time-item p { font-size: 10px; color: #64748b; line-height: 1.2; font-weight: 600; }
+
+/* Tracker Logic */
+.tracker-row { display: flex; justify-content: space-between; align-items: flex-start; }
+
+.track-col { flex: 1; padding: 0 5px; display: flex; flex-direction: column; }
+.border-r { border-right: 1px solid #f1f5f9; }
+
+.label { font-size: 9px; color: #94a3b8; font-weight: 700; }
+.val { font-size: 13px; color: #1e293b; font-weight: 800; margin-top: 3px; }
+
+.cycle-ring {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f1f5f9;
+    border-top-color: #8b5cf6;
+    border-radius: 50%;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.dots-group { display: flex; gap: 3px; margin-top: 8px; }
+.dots-group span { width: 6px; height: 6px; border-radius: 50%; }
+.d-red { background: #f43f5e; }
+.d-grey { background: #e2e8f0; }
+
+.wave-bg {
+    height: 10px;
+    background: linear-gradient(90deg, #e0e7ff, transparent);
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+
+
+
+
+
+
